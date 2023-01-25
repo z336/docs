@@ -1,0 +1,40 @@
+---
+const currentPath = Astro.url.pathname;
+import docs from '../data/docs.yaml';
+---
+
+{
+  docs.map((section) => {
+    return (
+      <details class="menu | left">
+        <summary>{section.title}</summary>
+        <ul class="flow | current-page" role="list">
+          <li>
+            <a
+              href={section.url}
+              aria-current={`${
+                currentPath === `${section.url}` ? 'page' : 'false'
+              }`}
+            >
+              {section.title}
+            </a>
+          </li>
+          {section.articles.map((article) => {
+            return (
+              <li>
+                <a
+                  href={article.url}
+                  aria-current={`${
+                    currentPath === `${article.url}` ? 'page' : 'false'
+                  }`}
+                >
+                  {article.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </details>
+    );
+  })
+}

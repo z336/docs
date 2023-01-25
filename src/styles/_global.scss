@@ -1,0 +1,146 @@
+body {
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  font-size: var(--step-0);
+  font-family: var(--font-base);
+  overflow-y: scroll;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-size: var(--step-1);
+}
+
+h4 {
+  font-size: var(--step-0);
+}
+
+h5 {
+  font-size: var(--step--1);
+}
+
+h6 {
+  font-size: var(--step--2);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @media (min-width: 60rem) {
+    // Visually line up with menus on desktop
+    scroll-margin-block-start: calc(var(--offset) + var(--space-l));
+  }
+  // Otherwise scroll farther
+  scroll-margin-block-start: var(--offset);
+}
+
+a {
+  color: currentColor;
+  text-decoration: underline 0.1rem;
+}
+
+a:is(:hover, :focus) {
+  text-underline-offset: 0.35rem;
+}
+
+a:not([href*='astro-docs-prototype.com/']):not([href^='#']):not(
+    [href^='/']
+  ):after {
+  display: inline-block;
+  width: 1.25em;
+  height: 1em;
+  background-image: url('/external-link.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60% auto;
+  /* alternative text rules */
+  content: '(external link)';
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 1.25em; /* the width of the icon */
+}
+
+button {
+  cursor: pointer;
+}
+
+details {
+  cursor: pointer;
+  summary {
+    list-style: none;
+    font-weight: bold;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::before {
+    display: inline-block;
+    width: 2em;
+    height: 0.85em;
+    background-image: url('/chevron-right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% auto;
+    content: '';
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 2em; // the width of the icon
+  }
+
+  &[open] {
+    summary::before {
+      transform: rotate(90deg);
+      transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+        visibility 0.3s linear;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  td,
+  th {
+    padding-block: var(--space-3xs-2xs);
+    padding-inline: var(--gutter);
+    border: var(--border-thin) solid var(--color-dark);
+  }
+
+  th {
+    background-color: var(--color-blue-light);
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--color-grey-light);
+  }
+
+  tr:hover {
+    background-color: var(--color-callout-yellow);
+  }
+}
+
+hr {
+  border: none;
+  border-block-start: solid 0.1rem var(--color-grey-light);
+}
+
+footer {
+  --region-space-top: var(--space-l);
+  --region-space-bottom: var(--space-l);
+  background-color: var(--color-grey-light);
+}
+
+img {
+  border-radius: var(--border-radius);
+}

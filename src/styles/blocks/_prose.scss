@@ -1,0 +1,19 @@
+.prose {
+  --wrapper-max-width: var(--measure);
+  max-width: var(--measure);
+  --flow-space: var(--space-l-xl);
+  figcaption {
+    --flow-space: 0;
+  }
+}
+
+// Less flow space under headings and between multiple paragraphs
+// Including script is a temporary fix for an Astro bug: https://github.com/withastro/astro/issues/5715
+.prose :is(h1, h2, h3, h4, script) + *,
+p + p {
+  --flow-space: var(--space-s-m);
+}
+
+.prose :is(nav) + * {
+  --flow-space: var(--space-s-m);
+}

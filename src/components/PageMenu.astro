@@ -1,0 +1,21 @@
+---
+const currentPath = Astro.url.pathname;
+import pages from '../data/pages.yaml';
+---
+
+{
+  pages.map((page) => {
+    return (
+      <ul class="pages | current-page" role="list">
+        <li>
+          <a
+            href={page.url}
+            aria-current={`${currentPath === `${page.url}` ? 'page' : 'false'}`}
+          >
+            {page.title}
+          </a>
+        </li>
+      </ul>
+    );
+  })
+}

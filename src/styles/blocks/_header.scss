@@ -1,0 +1,21 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--offset);
+  z-index: 2;
+  --region-space-top: var(--space-s);
+  --region-space-bottom: var(--space-s);
+  background-color: var(--color-light);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
+  a:is(:hover, :focus) {
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+  }
+}

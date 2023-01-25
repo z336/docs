@@ -1,0 +1,28 @@
+{
+  "name": "@example/minimal",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.12.1",
+    "@astrojs/mdx": "^0.14.0",
+    "@astrojs/preact": "^1.2.0",
+    "astro": "^2.0.0",
+    "hast-util-select": "^5.0.4",
+    "preact": "^10.11.3",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.1.0",
+    "sharp": "^0.31.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-yaml": "^4.0.1",
+    "sass": "^1.57.1"
+  }
+}
